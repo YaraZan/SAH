@@ -10,7 +10,7 @@
                 <ButtonMax/>
             </div>
         </div>
-        <button class="form__submit-start" @click="goToTestsPage">Начать</button>
+        <button class="form__submit-start">Начать</button>
     </form>
 </template>
 
