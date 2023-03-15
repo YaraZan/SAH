@@ -1,8 +1,6 @@
 import User from "@/helpers/user";
 import Validation from "@/helpers/validation";
 
-import TestManager from "./testManager";
-
 export default function submitUser(e) {
 
     e.preventDefault()
@@ -20,7 +18,6 @@ export default function submitUser(e) {
         user.setUserName(userName)
     
         console.log(user.getUserName())
-        console.log(new TestManager().testData)
     }
 
 }
