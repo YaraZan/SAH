@@ -34,36 +34,10 @@
     margin-bottom: 15px;
 }
 
-.quiz__progress-bar {
-    width: 80%;
-    height: 16px;
-    display: flex;
-    border-radius: 100px;
-    margin-bottom: 100px;
-}
-
-.quiz__progress-bar div {
-    width: calc(100% / 3);
-}
-
-.bar1 {
-    border-radius: 10px 0 0 10px;
-}
-
-.bar3 {
-    border-radius: 0 10px 10px 0;
-}
-
-.bar1, .bar2, .bar3 {
-    background-color: #313131;
-}
-
-.bar1 {
-    background-color: #2FCC59;
-}
 
 .quiz__interact-zone {
     width: 100%;
     display: flex;
     column-gap: 10px;
 }
+

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="interact-zone__card card-physics">
+    <div class="interact-zone__card">
         <div class="upper-block">{{ testName }}</div>
         <div class="card-hover">
             <div class="card__icon"></div>
