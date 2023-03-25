@@ -19,17 +19,34 @@ import ButtonMin from '@/components/ButtonMin.vue';
 import ButtonMax from '@/components/ButtonMax.vue';
 import InputName from '@/components/InputName.vue';
 import InputAge from '@/components/InputAge.vue';
-import submitUser from '@/js/submitUser';
 import iconsLoader from '@/helpers/testIconsLoader' 
+import Validation from '@/helpers/validation';
+import LocalStorageHandler from '@/data/localStorageHandler';
+
 
 export default {
     name: "HomeForm",
     components: { ButtonMin, ButtonMax, InputName, InputAge },
     methods: { 
-        submit(e) { submitUser(e) },
-        goToTestsPage() {
-            this.$router.push('/tests')
-        },
+        submit(e) {     
+            e.preventDefault()
+            const valid = new Validation()
+            if (valid.validateStartForm() == true) {
+                const name = document.querySelector('.input-text');
+                const age = document.querySelector('.input-number');
+
+                const userName = name.value;
+                const userAge = age.value;
+
+                const user = {}
+                user.name = userName
+                user.age = userAge
+
+                const lsHandler = new LocalStorageHandler()
+                lsHandler.setUser(user)
+
+                this.$router.push('/tests');
+        }},
         setIcons() { iconsLoader() }
     }
 }

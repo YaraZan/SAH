@@ -1,5 +1,5 @@
+
 <template>
-    <span class="quiz__done">Пройдено {{ testsDone }} / 3</span>
     <div class="quiz__progress">
         <div class="quiz__progress-bar" :style="[{'width': `${percent}%`}]"></div>
     </div>
@@ -7,11 +7,8 @@
 
 <script> 
 export default {
-    name: 'TestProgressbar',
+    name: 'QuestionProgressbar',
     props: {
-        testsDone: {
-            type: Number
-        },
         percent: {
             type: Number,
             required: true
@@ -21,10 +18,9 @@ export default {
 </script>
 
 <style>
-
 .quiz__progress {
     background-color: #313131;
-    width: 80%;
+    width: 100%;
     height: 16px;
     display: flex;
     border-radius: 100px;
@@ -37,6 +33,4 @@ export default {
     border-radius: 10px;
     height: 100%;
 }
-
-
 </style>
