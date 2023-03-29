@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script>
-      import STORAGE_SECURE_KEY from '@/utils/storage.js'
-      import { EncryptStorage } from 'encrypt-storage';
-
-      export const encryptStorage = new EncryptStorage(STORAGE_SECURE_KEY, options);
-    </script>
   </head>
   <body>
     <noscript>
