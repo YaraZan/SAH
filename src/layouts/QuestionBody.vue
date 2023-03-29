@@ -7,6 +7,7 @@
             v-for="(option, index) in question.options"
             :key="index"
             :text="option"
+            v-on:click="checkDone()"
             />
         </div>
     </div>
@@ -23,6 +24,11 @@ export default {
         }
     },
     components: { OptionInput },
+    methods: {
+        checkDone() {
+            this.$parent.checkDone()
+        }
+    }
 }
 
 </script>
