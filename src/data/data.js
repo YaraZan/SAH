@@ -1,39 +1,40 @@
+import { reactive } from "vue"
 
-export const data = [
-
+export const data = reactive({
+    tests: [
     {
         name: 'Физические нагрузки',
         questions: [
             {
-                name: 'Сколько жим?',
+                name: 'Вопрос 1',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 2,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько жим?',
+                name: 'Вопрос 2',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 3,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько жим?',
+                name: 'Вопрос 3',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 0,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько жим?',
+                name: 'Вопрос 4',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 2,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько жим?',
+                name: 'Вопрос 5',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 3,
                 selectedAnswer: null,
@@ -46,35 +47,35 @@ export const data = [
         name: 'Правильное питание',
         questions: [
             {
-                name: 'Что ешь чаще всего?',
+                name: 'Вопрос 1',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 2,
                 selectedAnswer: null,           
                 passed: false
             },
             {
-                name: 'Что ешь чаще всего?',
+                name: 'Вопрос 2',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 3,
                 selectedAnswer: null,     
                 passed: false
             },
             {
-                name: 'Что ешь чаще всего?',
+                name: 'Вопрос 3',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 0,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Что ешь чаще всего?',
+                name: 'Вопрос 4',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 2,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Что ешь чаще всего?',
+                name: 'Вопрос 5',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 0,
                 selectedAnswer: null,
@@ -87,35 +88,35 @@ export const data = [
         name: 'Здоровый сон',
         questions: [
             {
-                name: 'Сколько спишь?',
+                name: 'Вопрос 1',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 2,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько спишь?',
+                name: 'Вопрос 2',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 3,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько спишь?',
+                name: 'Вопрос 3',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 0,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько спишь?',
+                name: 'Вопрос 4',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 2,
                 selectedAnswer: null,
                 passed: false
             },
             {
-                name: 'Сколько спишь?',
+                name: 'Вопрос 5',
                 options: ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4'],
                 answer: 3,
                 selectedAnswer: null,
@@ -124,4 +125,9 @@ export const data = [
         ],
         status: 'notpassed'
     }
-]
+    ],
+    totalDone: 0,
+    increment() {
+        this.totalDone++
+    }
+})

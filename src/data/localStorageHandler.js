@@ -24,6 +24,13 @@ export default class LocalStorageHandler {
     localStorage.setItem('Current_user:', JSON.stringify(userObj))
   }
 
+  getUser = () => {
+    const user = JSON.parse(localStorage.getItem('Current_user:'))
+    const userNm = user.name
+
+    return userNm
+  }
+
   getUserName = () => {
     const user = JSON.parse(localStorage.getItem('Current_user:')) || []
     this.userName = user.name
@@ -32,7 +39,7 @@ export default class LocalStorageHandler {
   }
 
   testsFromLs() {
-    return JSON.parse(localStorage.getItem(`User_${this.getUserName()}`)) || [];
+    return JSON.parse(localStorage.getItem(`User_${this.getUser()}`)) || [];
   }
 
   saveToLocalStorage() {
@@ -52,30 +59,15 @@ export default class LocalStorageHandler {
     this.testsToLs(tests)
   }
 
-  doneTests = () => { 
-    let count = 0;
-    const tests = this.testsFromLs()
-
-    tests.forEach(test => {
-      if (test.status == 'passed') { count++ }
-    })
-
-    console.log('TESTIKI: ', tests)
-    return count
-  }
-
-  percentForTestProgressBar = () => { 
-    if (this.doneTests() == 1) { return 33 }
-    else if (this.doneTests() == 2) { return 66 }
-    else if (this.doneTests() == 3) { return 100 }
-    else { return 0 }
-  }
-
   startSession = (test) => {
     const testObj = this.getTestByName(test)
     localStorage.setItem(`Test_${testObj.name}`, JSON.stringify(testObj))
     this.testName = testObj.name;
     this.test = testObj;
+  }
+
+  endSession = (testName) => {
+    localStorage.removeItem(`Test_${testName}`)
   }
 
   getQuestionsByTestName = (testName) => { 

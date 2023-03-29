@@ -45,12 +45,13 @@ export default {
     },
     created() {
       this.loadTests();
+      this.loadTestsCompletedData();
     },
     methods: {
 
       loadTests() {
         const lsHandler = new LocalStorageHandler()
-        lsHandler.testsToLs(data);
+        lsHandler.testsToLs(data.tests);
         const tests = lsHandler.testsFromLs();
         this.tests = tests.map((test) => {
           return {
@@ -63,14 +64,23 @@ export default {
         console.log(this.tests)
       },
 
+      loadTestsCompletedData() {
+        this.done = data.totalDone
+        this.percent = this.returnPercent()
+      },
+
+      returnPercent() { 
+        if (data.totalDone == 1) { return 33 }
+        else if (data.totalDone == 2) { return 66 }
+        else if (data.totalDone == 3) { return 100 }
+        else { return 0 }
+      },
+
       start(testName) {
         const lsHandler = new LocalStorageHandler()
         lsHandler.startSession(testName)
         this.$root.$test = testName;
         this.$router.push('/question');
-
-        this.done = lsHandler.doneTests()
-        this.percent = lsHandler.percentForTestProgressBar()
       },
       setImg(testName) { 
         if ( testName == 'Физические нагрузки' ) { return 'physics-icon' }

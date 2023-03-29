@@ -4,8 +4,8 @@
 
         <div :class="image" class="question__icon"></div>
         <span class="question__test-title">{{ test }}</span>
-        <QuestionProgressbar/>
-        <QuestionBody @on-answer-selected="answerSelected" :question="questions[currentQuestion]"/>
+        <QuestionProgressbar :percent="percent"/>
+        <QuestionBody @on-check-done="checkDone" @on-answer-selected="answerSelected" :question="questions[currentQuestion]"/>
 
     </div>
 </template>
@@ -28,7 +28,8 @@ data() {
         currentQuestion: 0,
         questions: [],
         image: null,
-        test: this.$root.$test
+        test: this.$root.$test,
+        percent: 0
     }
 },
 created() {
@@ -49,6 +50,13 @@ methods: {
         if (this.questions[this.currentQuestion].selectedAnswer != null) return false
         this.questions[this.currentQuestion].selectedAnswer = index
         this.currentQuestion++
+        this.percent += 20
+    },
+    checkDone() {
+        console.log('checking')
+        if (this.currentQuestion == this.questions.length) { 
+            this.$router.push('/recommendations')
+        }
     }
 }
 }

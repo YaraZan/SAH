@@ -21,7 +21,7 @@
     color: #2FCC59;
     margin-bottom: 18px;
     padding-left: 10px;
-    transition: all .5s ease-in;
+    transition: all .2s ease;
 }
 
 .form__input:hover {
@@ -33,7 +33,7 @@
 }
 
 .form__input:active {
-    background-color: #1f1f1f;
+    background-color: #535353;
 }
 
 .input-number {
@@ -61,12 +61,59 @@
     background-size: 10px 10px;
     background-position: center center;
     background-repeat: no-repeat;
-    transition: all .5s ease-in;
+    transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                margin 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .input-number-min:hover,
 .input-number-max:hover {
-    background-color: #1f1f1f;
+    background-color: #535353;
+    transform: scale(1.1);
+    
+}
+
+.left__descr {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: right;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.left__button {
+    width: max-content;
+    background-color: #313131;
+    border-radius: 10px;
+    border: none;
+    padding: 22px 36px;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    align-self: flex-end;
+    padding-left: 70px;
+
+    background-size: 24px 24px;
+    background-position: 27px;
+    background-repeat: no-repeat;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                margin 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.left__button:hover {
+    background-color: #5a5a5a;
+    transform: scale(1.1);
+    margin: 10px 0
+}
+
+.share-btn {
+    background-image: url('../assets/share-btn.svg');
+    margin-bottom: 15px;
+}
+
+.more-btn {
+    background-image: url('../assets/more-btn.svg');
 }
 
 .input-number-min {
@@ -93,11 +140,14 @@
     background-position: 98px;
     background-repeat: no-repeat;
     background-image: url('../assets/start.svg');
-    transition: all .5s ease-in;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                margin 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .form__submit-start:hover {
-    background-color: #1d8037;
+    background-color: #38ee69;
+    transform: scale(1.1);
+    margin: 10px 5px 
 }
 
 .hint {
